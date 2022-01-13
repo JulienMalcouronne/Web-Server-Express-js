@@ -51,9 +51,14 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/products', (req, res) => {
-  if (req.query.search)req.query
+  if (req.query.search){
   res.send({
     error: 'you must provide a search term',
+    products: []
+    })
+  }
+  console.log(req.query.search)
+  res.send({
     products: []
   })
 })
