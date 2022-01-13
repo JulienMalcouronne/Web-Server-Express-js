@@ -50,6 +50,14 @@ app.get('/weather', (req, res) => {
   })
 })
 
+app.get('/products', (req, res) => {
+  if (req.query.search)req.query
+  res.send({
+    error: 'you must provide a search term',
+    products: []
+  })
+})
+
 app.get('/help/*', (req, res) => {
   res.render('404',{
     errorMessage: "Help article not found.",
